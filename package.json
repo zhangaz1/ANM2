@@ -54,9 +54,10 @@
     "koa": "~0.18.1"
   },
   "devDependencies": {
-    "gulp": "~3.8.11"
+    "gulp": "~3.8.11",
+    "require-dir": "~0.3.0"
   },
   "peerDependencies": {},
-  "bundledDependencies": {},
+  "bundledDependencies": [],
   "optionalDependencies": {}
 }
