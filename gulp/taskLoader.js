@@ -1,13 +1,23 @@
 'use strict';
 
 
+//----------------------------------
+// import & export
+//----------------------------------
+
 var requireDir = require('require-dir');
 
 module.exports = Loader;
 
 
+//----------------------------------
+// constructor
+//----------------------------------
+
+var _context = null;
+
 function Loader(context) {
-	this.context = context;
+	_context = context;
 }
 
 var lpt = Loader.prototype;
@@ -17,11 +27,15 @@ lpt.loadTasks = function() {
 		recurse: true
 	});
 
-	addTasks(this.context, tasks);
+	addTasks(tasks);
 };
 
 
-function addTasks(context, tasks, prefix) {
+//----------------------------------
+// privates
+//----------------------------------
+
+function addTasks(tasks, prefix) {
 	if (!tasks) {
 		return;
 	}
@@ -34,13 +48,13 @@ function addTasks(context, tasks, prefix) {
 		var taskName = prefix + name;
 
 		if (typeof(task) === 'function') {
-			addTask(context, taskName, tasks[name]);
+			addTask(taskName, tasks[name]);
 		} else {
 			addTasks(task, taskName)
 		}
 	}
 }
 
-function addTask(context, name, createTask) {
-	createTask(context, name);
+function addTask(name, createTask) {
+	createTask(_context, name);
 }
