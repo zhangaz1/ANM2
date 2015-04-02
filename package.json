@@ -1,52 +1,60 @@
 {
-	"name": "ANM2",
-	"description": "the ANM2 demo",
-	"keywords": [
-		"gulp",
-		"browserify",
-		"angular",
-		"koa",
-		"node",
-		"io.js",
-		"mongodb"
-	],
-	"version": "0.0.1",
-	"licenses": {
-		"type": "MIT",
-		"url": "http://opensource.org/licenses/mit-license.php"
-	},
-	"author": {
-		"name": "zhangaz1",
-		"email": "zhangaz1@hotmail.com",
-		"url": "https://github.com/zhangaz1"
-	},
-	"contributors": [],
-	"homepage": "https://github.com/zhangaz1/ANM2",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/zhangaz1/ANM.git"
-	},
-	"bugs": {
-		"url": "https://github.com/zhangaz1/ANM2/issues",
-		"email": "zhangaz1@hotmail.com"
-	},
-	"engines": {
-		"node": ">=0.11.0",
-		"iojs": ">=1.5"
-	},
-	"os": ["!darwin", "linux", "win32"],
-	"cpu": ["!arm"],
-	"main": "./index.js",
-	"scripts": {
-		"start": "node --harmony ./index.js",
-		"dev": "gulp devOnLine"
-	},
-	"config": {
-		"port": "3000"
-	},
-	"dependencies": {},
-	"devDependencies": {},
-	"peerDependencies": {},
-	"bundledDependencies": {},
-	"optionalDependencies": {}
+  "name": "ANM2",
+  "description": "the ANM2 demo",
+  "keywords": [
+    "gulp",
+    "browserify",
+    "angular",
+    "koa",
+    "node",
+    "io.js",
+    "mongodb"
+  ],
+  "version": "0.0.1",
+  "licenses": {
+    "type": "MIT",
+    "url": "http://opensource.org/licenses/mit-license.php"
+  },
+  "author": {
+    "name": "zhangaz1",
+    "email": "zhangaz1@hotmail.com",
+    "url": "https://github.com/zhangaz1"
+  },
+  "contributors": [],
+  "homepage": "https://github.com/zhangaz1/ANM2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhangaz1/ANM.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zhangaz1/ANM2/issues",
+    "email": "zhangaz1@hotmail.com"
+  },
+  "engines": {
+    "node": ">=0.11.0",
+    "iojs": ">=1.5"
+  },
+  "os": [
+    "!darwin",
+    "linux",
+    "win32"
+  ],
+  "cpu": [
+    "!arm"
+  ],
+  "main": "./index.js",
+  "scripts": {
+    "start": "node --harmony ./index.js",
+    "dev": "gulp devOnLine"
+  },
+  "config": {
+    "port": "3000"
+  },
+  "dependencies": {
+    "koa": "~0.18.1"
+  },
+  "devDependencies": {},
+  "peerDependencies": {},
+  "bundledDependencies": {},
+  "optionalDependencies": {}
 }
