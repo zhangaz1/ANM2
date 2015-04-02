@@ -1,9 +1,11 @@
 'use strict';
 
 
-module.exports = function(context) {
+module.exports = function(context, name) {
+	context.config.tasks[name] = name;
+
 	context.gulp.task(
-		context.config.tasks.default,
+		name,
 		function(done) {
 			console.log('default task run!');
 			done(null);
