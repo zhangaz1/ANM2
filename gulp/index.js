@@ -3,9 +3,11 @@
 
 var gulp = require('gulp');
 
+var config = require('./config.js');
+
 gulp.task(
-	'default',
+	config.tasks.default,
 	function(done) {
 		console.log('default task run!');
-		done();
+		done(null);
 	});
