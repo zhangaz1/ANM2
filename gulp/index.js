@@ -1,9 +1,7 @@
 'use strict';
 
 
-var gulp = require('gulp');
-
-var config = require('./config.js');
+var context = require('./context.js');
 
 require('./tasks/index.js')
-	.createTasks(gulp, config);
+	.createTasks(context);
