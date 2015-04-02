@@ -1,0 +1,10 @@
+#---------------- packages ----------------#
+
+**/node_modules/*
+**/bower_components/*
+
+
+#---------------- builds ----------------#
+
+**/build/*
+**/dist/*
