@@ -12,16 +12,16 @@ function Loader(context) {
 
 var lpt = Loader.prototype;
 
-
 lpt.loadTasks = function() {
 	var tasks = requireDir('./tasks', {
 		recurse: true
 	});
 
-	this.addTasks(tasks);
+	addTasks(this.context, tasks);
 };
 
-lpt.addTasks = function(tasks, prefix) {
+
+function addTasks(context, tasks, prefix) {
 	if (!tasks) {
 		return;
 	}
@@ -34,13 +34,13 @@ lpt.addTasks = function(tasks, prefix) {
 		var taskName = prefix + name;
 
 		if (typeof(task) === 'function') {
-			this.addTask(taskName, tasks[name]);
+			addTask(context, taskName, tasks[name]);
 		} else {
-			this.addTasks(task, taskName)
+			addTasks(task, taskName)
 		}
 	}
-};
+}
 
-lpt.addTask = function(name, createTask) {
-	createTask(this.context, name);
-};
+function addTask(context, name, createTask) {
+	createTask(context, name);
+}
