@@ -12,10 +12,10 @@ module.exports = function(context, name) {
 		name,
 		'build server task',
 		function(done) {
-			debug('server source path: %s', config.files.server);
-			console.log(config.directories.build);
-
 			gulp.src(config.files.server)
+				.pipe(debug({
+					title: 'build: '
+				}))
 				.pipe(gulp.dest(config.directories.build));
 
 			done(null);
