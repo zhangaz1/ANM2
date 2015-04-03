@@ -10,7 +10,10 @@ var config = {
 };
 
 config.files = {
-	server: joinRoot('./**/src/server/**/*.*')
+	server: [
+		'!' + joinRoot('./build/**/*.*'),
+		joinRoot('./**/src/server/**/*.*')
+	]
 };
 
 config.directories = {
