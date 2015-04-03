@@ -7,12 +7,14 @@ var debug = require('gulp-debug');
 var sequence = require('gulp-sequence');
 
 var config = require('./config.js');
+var watchManager = require('./watchManager.js');
 
 gulp = help(gulp);
 
 module.exports = {
-	debug: debug,
 	gulp: gulp,
+	debug: debug,
+	sequence: sequence,
 	config: config,
-	sequence: sequence
+	watchManager: watchManager
 };
