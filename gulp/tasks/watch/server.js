@@ -10,21 +10,27 @@ module.exports = function(context, name) {
 	gulp.task(
 		name,
 		'watch server to build when change',
-		function(done) {
-			addWatch();
-			done(null);
-		});
+		addWatch
+	);
 
-	function addWatch() {
-		context.watchManager
-			.addWatchOnlyOnce(
-				name,
-				function() {
-					gulp.watch(
-						config.files.server,
-						function() {
-							gulp.start(config.tasks.build_server);
-						});
-				});
+	function addWatch(done) {
+		var success = context.watchManager
+			.cacheWatch(name);
+
+		if (success) {
+			watch();
+			console.log('添加watch：%s', name);
+		} else {
+			console.log('无需重复添加watch: %s', name);
+		}
+		done(null);
+	}
+
+	function watch() {
+		gulp.watch(
+			config.files.server,
+			function() {
+				gulp.start(config.tasks.build_server);
+			});
 	}
 };

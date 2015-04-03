@@ -4,12 +4,14 @@
 var watchCache = {};
 
 module.exports = {
-	addWatchOnlyOnce: addWatch
+	cacheWatch: cacheWatch
 };
 
-function addWatch(name, add) {
-	if (!watchCache[name]) {
+function cacheWatch(name) {
+	if (watchCache[name]) {
+		return false;
+	} else {
 		watchCache[name] = true;
-		add();
+		return true;
 	}
 }
