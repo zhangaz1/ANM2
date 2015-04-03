@@ -6,7 +6,10 @@ module.exports = function(context, name) {
 	config.tasks[name] = name;
 
 	context.gulp.task(
-		name, 'default task', [config.tasks.build_server],
+		name, 'default task', [
+			config.tasks.build_boot,
+			config.tasks.build_server
+		],
 		function(done) {
 			console.log('task ' + name + ' run!');
 			done(null);
