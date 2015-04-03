@@ -15,7 +15,7 @@ module.exports = function(context, name) {
 				tasks.watch_server
 			),
 			function(done) {
-				console.log('task ' + name + ' run!');
+				console.log('task %s run!', name);
 				done(null);
 			});
 };
