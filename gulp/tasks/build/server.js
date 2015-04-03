@@ -6,6 +6,7 @@ module.exports = function(context, name) {
 
 	context.gulp.task(
 		name,
+		'build server task',
 		function(done) {
 			console.log('task ' + name + ' run!');
 			done(null);
