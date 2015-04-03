@@ -14,9 +14,6 @@ module.exports = function(context, name) {
 				tasks.build_boot,
 				tasks.build_server,
 				tasks.watch_server
-			),
-			function(done) {
-				console.log('task %s run!', name);
-				done(null);
-			});
+			)
+		);
 };
