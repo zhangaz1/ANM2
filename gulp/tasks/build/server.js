@@ -4,6 +4,7 @@
 module.exports = function(context, name) {
 	context.config.tasks[name] = name;
 
+	var debug = context.debug;
 	var gulp = context.gulp;
 	var config = context.config;
 
@@ -11,7 +12,7 @@ module.exports = function(context, name) {
 		name,
 		'build server task',
 		function(done) {
-			console.log(config.files.server);
+			debug('server source path: %s', config.files.server);
 			console.log(config.directories.build);
 
 			gulp.src(config.files.server)
