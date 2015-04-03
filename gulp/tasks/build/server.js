@@ -16,8 +16,9 @@ module.exports = function(context, name) {
 				.pipe(debug({
 					title: 'build: '
 				}))
-				.pipe(gulp.dest(config.directories.build));
-
-			done(null);
+				.pipe(gulp.dest(config.directories.build))
+				.on('end', function() {
+					done(null);
+				});
 		});
 };
