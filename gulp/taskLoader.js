@@ -23,9 +23,8 @@ function Loader(context) {
 var lpt = Loader.prototype;
 
 lpt.loadTasks = function() {
-	var tasks = requireDir('./tasks', {
-		recurse: true
-	});
+	var dirObj = getDirObj('./tasks');
+	var tasks = parseTasks(dirObj);
 
 	addTasks(tasks);
 };
@@ -35,26 +34,41 @@ lpt.loadTasks = function() {
 // privates
 //----------------------------------
 
-function addTasks(tasks, prefix) {
-	if (!tasks) {
+function getDirObj(dir) {
+	return requireDir(dir, {
+		recurse: true
+	});
+}
+
+function parseTasks(dirObj, prefix, tasks) {
+	if (!dirObj) {
 		return;
 	}
 
 	prefix = prefix ? prefix + '_' : '';
+	tasks = tasks || {};
 
-
-	for (var name in tasks) {
-		var task = tasks[name];
+	for (var name in dirObj) {
+		var task = dirObj[name];
 		var taskName = prefix + name;
 
 		if (typeof(task) === 'function') {
-			addTask(taskName, tasks[name]);
+			tasks[taskName] = task;
 		} else {
-			addTasks(task, taskName)
+			parseTasks(task, taskName, tasks)
 		}
 	}
+
+	return tasks;
 }
 
-function addTask(name, createTask) {
-	createTask(_context, name);
+function addTasks(tasksHash) {
+	var tasks = _context.config.tasks;
+	for (var p in tasksHash) {
+		tasks[p] = p;
+	}
+
+	for (var p in tasksHash) {
+		tasksHash[p](_context, p);
+	}
 }
