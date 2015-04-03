@@ -11,20 +11,20 @@ module.exports = function(context, name) {
 		name,
 		'watch server to build when change',
 		function(done) {
-			console.log('watch server');
-			// addWatch();
+			addWatch();
 			done(null);
 		});
 
-	// function addWatch() {
-	// 	context.watchManager
-	// 		.addWatchOnlyOnce(
-	// 			name,
-	// 			function() {
-	// 				gulp.watch(config.files.server,
-	// 					function() {
-	// 						gulp.start(config.tasks.build_server);
-	// 					});
-	// 			});
-	// }
+	function addWatch() {
+		context.watchManager
+			.addWatchOnlyOnce(
+				name,
+				function() {
+					gulp.watch(
+						config.files.server,
+						function() {
+							gulp.start(config.tasks.build_server);
+						});
+				});
+	}
 };
