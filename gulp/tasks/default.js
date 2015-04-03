@@ -2,16 +2,17 @@
 
 
 module.exports = function(context, name) {
-	var config = context.config;
-	config.tasks[name] = name;
+	var tasks = context.config;
+	tasks[name] = name;
 
 	context.gulp
 		.task(
 			name,
 			'default task',
 			context.sequence(
-				config.tasks.build_boot,
-				config.tasks.build_server
+				tasks.build_boot,
+				tasks.build_server,
+				tasks.watch_server
 			),
 			function(done) {
 				console.log('task ' + name + ' run!');
