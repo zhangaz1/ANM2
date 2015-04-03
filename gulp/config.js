@@ -10,6 +10,10 @@ var config = {
 };
 
 config.files = {
+	boot: [
+		joinRoot('./run.cmd'),
+		joinRoot('./index.js')
+	],
 	server: [
 		'!' + joinRoot('./build/**/*.*'),
 		joinRoot('./**/src/server/**/*.*')
