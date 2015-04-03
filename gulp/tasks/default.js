@@ -2,8 +2,10 @@
 
 
 module.exports = function(context, name) {
-	var tasks = context.config;
+	var tasks = context.config.tasks;
 	tasks[name] = name;
+
+	console.log(tasks);
 
 	context.gulp
 		.task(
