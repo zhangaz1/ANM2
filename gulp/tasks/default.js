@@ -7,7 +7,7 @@ module.exports = function(context, name) {
 	context.gulp.task(
 		name,
 		function(done) {
-			console.log('default task run!');
+			console.log('task ' + name + ' run!');
 			done(null);
 		});
 };
