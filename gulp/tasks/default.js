@@ -10,6 +10,7 @@ module.exports = function(context, name) {
 			name,
 			'default task',
 			context.sequence(
+				tasks.clean_build,
 				tasks.build_boot,
 				tasks.build_server,
 				tasks.watch_server
