@@ -6,6 +6,7 @@ module.exports = function(context, name) {
 
 	var gulp = context.gulp;
 	var config = context.config;
+	var cacheManager = context.cacheManager;
 
 	gulp.task(
 		name,
@@ -14,15 +15,14 @@ module.exports = function(context, name) {
 	);
 
 	function addWatch(done) {
-		var success = context.watchManager
-			.cacheWatch(name);
-
-		if (success) {
-			watch();
-			console.log('添加watch：%s', name);
-		} else {
+		if (cacheManager.get(name)) {
 			console.log('无需重复添加watch: %s', name);
+		} else {
+			watch();
+			cacheManager.set(name, true);
+			console.log('添加watch：%s', name);
 		}
+
 		done(null);
 	}
 

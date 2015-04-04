@@ -8,7 +8,7 @@ var sequence = require('gulp-sequence');
 var watch = require('gulp-watch');
 
 var config = require('./config.js');
-var watchManager = require('./watchManager.js');
+var cacheManager = require('./cacheManager.js');
 
 gulp = help(gulp);
 
@@ -18,5 +18,5 @@ module.exports = {
 	sequence: sequence,
 	watch: watch,
 	config: config,
-	watchManager: watchManager
+	cacheManager: cacheManager
 };
