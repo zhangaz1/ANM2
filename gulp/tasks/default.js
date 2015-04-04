@@ -12,6 +12,7 @@ module.exports = function(context, name) {
 				tasks.clean_build,
 				tasks.build_boot,
 				tasks.build_server,
+				tasks.runServer_web,
 				tasks.watch_server
 			)
 		);
