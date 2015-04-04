@@ -2,8 +2,6 @@
 
 
 module.exports = function(context, name) {
-	context.config.tasks[name] = name;
-
 	var gulp = context.gulp;
 	var config = context.config;
 	var cacheManager = context.cacheManager;

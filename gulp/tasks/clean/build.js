@@ -4,8 +4,6 @@
 var del = require('del');
 
 module.exports = function(context, name) {
-	context.config.tasks[name] = name;
-
 	var debug = context.debug;
 	var gulp = context.gulp;
 	var config = context.config;
