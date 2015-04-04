@@ -13,6 +13,7 @@ module.exports = function(context, name) {
 				tasks.build_boot,
 				tasks.build_server,
 				tasks.runServer_web,
+				tasks.dev_browser,
 				tasks.watch_server
 			)
 		);
