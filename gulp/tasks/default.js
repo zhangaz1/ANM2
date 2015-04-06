@@ -8,14 +8,17 @@ module.exports = function(context, name) {
 		.task(
 			name,
 			'default task',
-			context.sequence(
-				tasks.clean_build,
-				tasks.build_boot,
-				tasks.build_server,
-				tasks.runServer_web,
-				tasks.runServer_liveReload,
-				tasks.dev_browser,
-				tasks.watch_server
-			)
+			function(done) {
+				context.sequence(
+					tasks.clean_build,
+					tasks.build_boot,
+					tasks.build_server,
+					tasks.runServer_web,
+					tasks.runServer_liveReload,
+					tasks.dev_browser,
+					tasks.watch_server,
+					done
+				);
+			}
 		);
 };
