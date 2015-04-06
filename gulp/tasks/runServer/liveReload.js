@@ -1,8 +1,6 @@
 'use strict';
 
 
-var livereload = require('gulp-livereload');
-
 module.exports = function(context, name) {
 	var tasks = context.config.tasks;
 	var cacheManager = context.cacheManager;
@@ -14,7 +12,7 @@ module.exports = function(context, name) {
 			function(done) {
 				var webProcess = cacheManager.get(name);
 				if (!webProcess) {
-					livereload.listen();
+					context.liveReload.listen();
 					cacheManager.set(name, true);
 				}
 
