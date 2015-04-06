@@ -10,11 +10,11 @@ module.exports = function(context, name) {
 		name,
 		'release js task',
 		function(done) {
-			gulp.src(config.files.server)
+			gulp.src(config.files.buildJs)
 				.pipe(debug({
 					title: 'release js: '
 				}))
-				.pipe(gulp.dest(config.directories.build))
+				.pipe(gulp.dest(config.directories.release))
 				.on('end', function(err) {
 					done(err);
 				});

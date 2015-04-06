@@ -17,11 +17,17 @@ config.files = {
 	server: [
 		'!' + joinRoot('./build/**/*.*'),
 		joinRoot('./**/src/server/**/*.*')
+	],
+	buildJs: [
+		'!' + joinRoot('./gulp/**/*.js'),
+		'!' + joinRoot('./node_modules/**/*.js'),
+		joinRoot('./build/**/*.js')
 	]
 };
 
 config.directories = {
-	build: joinRoot('./build')
+	build: joinRoot('./build'),
+	release: joinRoot('./release')
 };
 
 function joinRoot(subPath) {
