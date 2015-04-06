@@ -28,7 +28,7 @@ module.exports = function(context, name) {
 		context.watch(
 			config.files.server,
 			function() {
-				gulp.start(config.tasks.build_server);
+				gulp.start(config.tasks.update_server);
 			}
 		);
 	}
