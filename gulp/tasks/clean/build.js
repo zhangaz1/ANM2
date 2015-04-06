@@ -12,9 +12,10 @@ module.exports = function(context, name) {
 		name,
 		'clean build task',
 		function(done) {
-			del([config.directories.build], function(err, deleteFiles) {
-				console.log('deleted files: %s', deleteFiles)
-				done(err);
-			});
+			del([config.directories.build],
+				function(err, deleteFiles) {
+					console.log('deleted files: %s', deleteFiles)
+					done(err);
+				});
 		});
 };
