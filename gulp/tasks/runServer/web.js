@@ -20,8 +20,6 @@ module.exports = function(context, name) {
 				webProcess = startWeb();
 				cacheManager.set(name, webProcess);
 
-				context.liveReload.reload();
-
 				setTimeout(function() {
 					done(null);
 				}, 300);
