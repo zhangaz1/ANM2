@@ -65,6 +65,7 @@
     "gulp-livereload": "^3.8.0",
     "gulp-sequence": "~0.3.2",
     "gulp-watch": "~4.2.2",
+    "jshint-stylish": "^1.0.1",
     "require-dir": "~0.3.0"
   },
   "peerDependencies": {},
