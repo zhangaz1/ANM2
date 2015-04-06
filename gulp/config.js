@@ -10,6 +10,9 @@ var config = {
 };
 
 config.files = {
+	allJs: [
+		joinRoot('./src/**/*.js')
+	],
 	boot: [
 		joinRoot('./run.cmd'),
 		joinRoot('./index.js')
