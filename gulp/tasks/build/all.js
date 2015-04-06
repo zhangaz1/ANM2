@@ -10,6 +10,7 @@ module.exports = function(context, name) {
 			'build all task',
 			function(done) {
 				context.sequence(
+					tasks.clean_build,
 					tasks.build_boot,
 					tasks.build_server,
 					done
