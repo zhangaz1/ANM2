@@ -19,6 +19,7 @@ config.files = {
 	],
 	server: [
 		'!' + joinRoot('./build/**/*.*'),
+		'!' + joinRoot('./release/**/*.*'),
 		joinRoot('./**/src/server/**/*.*')
 	],
 	buildJs: [
