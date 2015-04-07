@@ -20,9 +20,9 @@ module.exports = function(context, name) {
 				webProcess = startWeb();
 				cacheManager.set(name, webProcess);
 
-				setTimeout(function() {
-					done(null);
-				}, 300);
+				process.nextTick(function() {
+					done();
+				});
 			}
 		);
 };
