@@ -11,9 +11,8 @@ module.exports = function(context, name) {
 			function(done) {
 				context.sequence(
 					tasks.clean_build,
-					tasks.clean_release,
-					done
-				);
+					tasks.clean_release
+				)(done);
 			}
 		);
 };

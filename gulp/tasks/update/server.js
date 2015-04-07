@@ -12,9 +12,8 @@ module.exports = function(context, name) {
 				context.sequence(
 					tasks.build_server,
 					tasks.runServer_web,
-					tasks.dev_reload,
-					done
-				);
+					tasks.dev_reload
+				)(done);
 			}
 		);
 };
