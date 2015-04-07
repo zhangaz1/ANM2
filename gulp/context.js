@@ -17,7 +17,7 @@ gulp = help(gulp);
 module.exports = {
 	gulp: gulp,
 	debug: debug,
-	sequence: sequence,
+	sequence: sequence.use(gulp),
 	liveReload: liveReload,
 	watch: watch,
 	config: config,
