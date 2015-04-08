@@ -1,4 +1,9 @@
 'use strict';
 
 
-module.exports = {};
+var path = require('path');
+
+module.exports = {
+	path: path,
+	pathJoin: path.join
+};
