@@ -12,7 +12,7 @@ module.exports = function(context, name) {
 		function(done) {
 			gulp.src(config.files.server)
 				.pipe(debug({
-					title: 'build: '
+					title: 'build server: '
 				}))
 				.pipe(gulp.dest(config.directories.build))
 				.on('end', function(err) {
