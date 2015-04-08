@@ -8,7 +8,7 @@ var staticServer = require('koa-static');
 
 var app = koa();
 
-var clientDir = path.resolve('./src/client');
+var clientDir = path.join(__dirname, './../client');
 var publicFiles = staticServer(clientDir);
 publicFiles._name = 'static/client';
 
