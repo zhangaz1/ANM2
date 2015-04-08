@@ -1,0 +1,35 @@
+'use strict';
+
+
+module.exports = function(context, name) {
+	var gulp = context.gulp;
+	var config = context.config;
+	var cacheManager = context.cacheManager;
+
+	gulp.task(
+		name,
+		'watch client to build when change',
+		addWatch
+	);
+
+	function addWatch(done) {
+		if (cacheManager.get(name)) {
+			console.log('无需重复添加watch: %s', name);
+		} else {
+			watch();
+			cacheManager.set(name, true);
+			console.log('添加watch：%s', name);
+		}
+
+		done(null);
+	}
+
+	function watch() {
+		context.watch(
+			config.files.client,
+			function() {
+				gulp.start(config.tasks.update_client);
+			}
+		);
+	}
+};
