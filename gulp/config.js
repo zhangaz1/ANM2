@@ -14,8 +14,10 @@ config.files = {
 		joinRoot('./src/**/*.js')
 	],
 	boot: [
-		joinRoot('./run.cmd'),
-		joinRoot('./index.js')
+		joinRoot('./config.js'),
+		joinRoot('./context.js'),
+		joinRoot('./index.js'),
+		joinRoot('./run.cmd')
 	],
 	server: [
 		'!' + joinRoot('./build/**/*.*'),
