@@ -1,21 +1,18 @@
 'use strict';
 
 
-var path = require('path');
-
 var koa = require('koa');
-var staticServer = require('koa-static');
+
+var context = require('./context.js');
+var staticResource = require('./handlers/common/staticResource.js');
 
 var app = koa();
+context.app = app;
 
-var clientDir = path.join(__dirname, './../client');
-var publicFiles = staticServer(clientDir);
-publicFiles._name = 'static/client';
-
-app.use(publicFiles);
+staticResource(context);
 
 app.use(function*() {
 	this.body = 'hi!';
 })
 
-app.listen(3000);
+app.listen(context.config.webPort);
