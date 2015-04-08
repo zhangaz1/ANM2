@@ -3,7 +3,7 @@
 
 var config = {
 	webPort: 3000,
-	clientDir: './../client'
+	clientDir: './src/client'
 };
 
 module.exports = function(context) {
@@ -20,9 +20,9 @@ function fillConfig(context) {
 }
 
 function joinRoot(dir) {
-	config.context.pathJoin(config.root, dir);
+	return config.context.pathJoin(config.root, dir);
 }
 
 function getRoot() {
-	return config.context.pathJoin(__dirname, './../../..');
+	return config.context.pathJoin(__dirname, './../..');
 }

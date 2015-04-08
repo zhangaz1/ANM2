@@ -15,4 +15,4 @@ app.use(function*() {
 	this.body = 'hi!';
 })
 
-app.listen(3000);
+app.listen(context.config.webPort);
