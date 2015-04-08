@@ -10,6 +10,7 @@ module.exports = function(context, name) {
 			'watch all task',
 			function(done) {
 				context.sequence(
+					tasks.watch_boot,
 					tasks.watch_server,
 					tasks.watch_client
 				)(done);
