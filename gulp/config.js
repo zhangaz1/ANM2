@@ -3,7 +3,7 @@
 
 var path = require('path');
 
-var root = path.resolve('./'); // process.cwd();
+var root = path.join(__dirname, './..'); // path.resolve('./'); // process.cwd();
 
 var config = {
 	tasks: {}
