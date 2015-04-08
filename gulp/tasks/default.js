@@ -14,7 +14,7 @@ module.exports = function(context, name) {
 					tasks.runServer_web,
 					tasks.runServer_liveReload,
 					tasks.dev_browser,
-					tasks.watch_server
+					tasks.watch_all
 				)(done);
 			}
 		);
