@@ -1,18 +1,13 @@
 'use strict';
 
 
-var path = require('path');
-
 var koa = require('koa');
-var staticServer = require('koa-static');
+
+var staticResource = require('./handlers/common/staticResource.js');
 
 var app = koa();
 
-var clientDir = path.join(__dirname, './../client');
-var publicFiles = staticServer(clientDir);
-publicFiles._name = 'static/client';
-
-app.use(publicFiles);
+staticResource(app);
 
 app.use(function*() {
 	this.body = 'hi!';
