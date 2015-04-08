@@ -12,3 +12,4 @@ var context =
 	};
 
 context.config = config(context);
+context.joinRoot = config.joinRoot;

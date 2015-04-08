@@ -16,7 +16,9 @@ function fillConfig(context) {
 
 	config.root = getRoot();
 
-	config.clientDir = joinRoot(config.clientDir)
+	config.clientDir = joinRoot(config.clientDir);
+
+	config.joinRoot = joinRoot;
 }
 
 function joinRoot(dir) {
@@ -24,5 +26,5 @@ function joinRoot(dir) {
 }
 
 function getRoot() {
-	return config.context.pathJoin(__dirname, './../..');
+	return config.context.pathJoin(__dirname, './');
 }
