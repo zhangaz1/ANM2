@@ -10,9 +10,9 @@ module.exports = function(context, name) {
 		name,
 		'build server task',
 		function(done) {
-			gulp.src(config.files.server)
+			gulp.src(config.files.client)
 				.pipe(debug({
-					title: 'build server: '
+					title: 'build client: '
 				}))
 				.pipe(gulp.dest(config.directories.build))
 				.on('end', function(err) {

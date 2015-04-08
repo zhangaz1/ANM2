@@ -7,14 +7,11 @@ module.exports = function(context, name) {
 	context.gulp
 		.task(
 			name,
-			'default task',
+			'watch all task',
 			function(done) {
 				context.sequence(
-					tasks.build_all,
-					tasks.runServer_web,
-					tasks.runServer_liveReload,
-					tasks.dev_browser,
-					tasks.watch_all
+					tasks.watch_server,
+					tasks.watch_client
 				)(done);
 			}
 		);

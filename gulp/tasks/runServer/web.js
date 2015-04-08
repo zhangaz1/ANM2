@@ -12,6 +12,8 @@ module.exports = function(context, name) {
 			name,
 			'run web server task',
 			function(done) {
+				console.log('web server restarting...');
+
 				var webProcess = cacheManager.get(name);
 				if (webProcess) {
 					webProcess.kill();
@@ -19,6 +21,8 @@ module.exports = function(context, name) {
 
 				webProcess = startWeb();
 				cacheManager.set(name, webProcess);
+
+				console.log('web server restarted');
 
 				process.nextTick(done);
 			}

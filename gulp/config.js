@@ -3,7 +3,7 @@
 
 var path = require('path');
 
-var root = path.resolve('./'); // process.cwd();
+var root = path.join(__dirname, './..'); // path.resolve('./'); // process.cwd();
 
 var config = {
 	tasks: {}
@@ -21,6 +21,11 @@ config.files = {
 		'!' + joinRoot('./build/**/*.*'),
 		'!' + joinRoot('./release/**/*.*'),
 		joinRoot('./**/src/server/**/*.*')
+	],
+	client: [
+		'!' + joinRoot('./build/**/*.*'),
+		'!' + joinRoot('./release/**/*.*'),
+		joinRoot('./**/src/client/**/*.*')
 	],
 	buildJs: [
 		'!' + joinRoot('./gulp/**/*.js'),
