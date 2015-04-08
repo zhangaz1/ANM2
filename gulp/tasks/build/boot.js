@@ -2,8 +2,6 @@
 
 
 module.exports = function(context, name) {
-	context.config.tasks[name] = name;
-
 	var debug = context.debug;
 	var gulp = context.gulp;
 	var config = context.config;
@@ -17,8 +15,8 @@ module.exports = function(context, name) {
 					title: 'build: '
 				}))
 				.pipe(gulp.dest(config.directories.build))
-				.on('end', function() {
-					done(null);
+				.on('end', function(err) {
+					done(err);
 				});
 		});
 };

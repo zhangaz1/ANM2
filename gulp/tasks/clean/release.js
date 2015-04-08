@@ -1,6 +1,8 @@
 'use strict';
 
 
+var del = require('del');
+
 module.exports = function(context, name) {
 	var debug = context.debug;
 	var gulp = context.gulp;
@@ -8,14 +10,11 @@ module.exports = function(context, name) {
 
 	gulp.task(
 		name,
-		'build server task',
+		'clean release task',
 		function(done) {
-			gulp.src(config.files.server)
-				.pipe(debug({
-					title: 'build: '
-				}))
-				.pipe(gulp.dest(config.directories.build))
-				.on('end', function(err) {
+			del([config.directories.release],
+				function(err, deleteFiles) {
+					console.log('deleted files: %s', deleteFiles)
 					done(err);
 				});
 		});
