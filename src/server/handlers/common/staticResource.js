@@ -5,10 +5,10 @@ var path = require('path');
 
 var staticServer = require('koa-static');
 
-module.exports = function(app) {
+module.exports = function(context) {
 	var clientDir = path.join(__dirname, './../../../client');
 	var publicFiles = staticServer(clientDir);
 	publicFiles._name = 'static/client';
 
-	app.use(publicFiles);
+	context.app.use(publicFiles);
 };
