@@ -3,7 +3,7 @@
 
 var koa = require('koa');
 
-var context = require('./context.js');
+var context = require('./../../context.js');
 var staticResource = require('./handlers/common/staticResource.js');
 
 var app = koa();
