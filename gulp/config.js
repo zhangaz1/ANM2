@@ -22,6 +22,11 @@ config.files = {
 		'!' + joinRoot('./release/**/*.*'),
 		joinRoot('./**/src/server/**/*.*')
 	],
+	client: [
+		'!' + joinRoot('./build/**/*.*'),
+		'!' + joinRoot('./release/**/*.*'),
+		joinRoot('./**/src/client/**/*.*')
+	],
 	buildJs: [
 		'!' + joinRoot('./gulp/**/*.js'),
 		'!' + joinRoot('./node_modules/**/*.js'),
