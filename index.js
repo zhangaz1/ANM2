@@ -1,4 +1,4 @@
 'use strict';
 
 
-require('./src/server/index.js');
+require('./src/boot/index.js');
