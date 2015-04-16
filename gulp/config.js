@@ -14,6 +14,8 @@ config.files = {
 		joinRoot('./src/**/*.js')
 	],
 	boot: [
+		'!' + joinRoot('./build/**/*.*'),
+		'!' + joinRoot('./release/**/*.*'),
 		'!' + joinRoot('./node_modules/**/*.*'),
 		joinRoot('./**/src/boot/currentAppSys.js'),
 		joinRoot('./**/src/boot/config.js'),
@@ -26,16 +28,19 @@ config.files = {
 	server: [
 		'!' + joinRoot('./build/**/*.*'),
 		'!' + joinRoot('./release/**/*.*'),
+		'!' + joinRoot('./node_modules/**/*.*'),
 		joinRoot('./**/src/server/**/*.*')
 	],
 	client: [
 		'!' + joinRoot('./build/**/*.*'),
 		'!' + joinRoot('./release/**/*.*'),
+		'!' + joinRoot('./node_modules/**/*.*'),
 		joinRoot('./**/src/client/**/*.*')
 	],
 	buildJs: [
 		'!' + joinRoot('./gulp/**/*.js'),
 		'!' + joinRoot('./node_modules/**/*.js'),
+		'!' + joinRoot('./node_modules/**/*.*'),
 		joinRoot('./build/**/*.js')
 	]
 };
