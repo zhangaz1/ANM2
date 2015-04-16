@@ -17,4 +17,4 @@ cas.joinRoot = function(dir) {
 	return path.join(cas.root, dir);
 };
 
-cas.root = cas.joinRoot('./../..');
+cas.root = cas.joinRoot('./..');
