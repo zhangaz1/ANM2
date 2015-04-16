@@ -10,7 +10,7 @@
 		"io.js",
 		"mongodb"
 	],
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"licenses": {
 		"type": "MIT",
 		"url": "http://opensource.org/licenses/mit-license.php"
