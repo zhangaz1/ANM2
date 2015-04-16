@@ -39,9 +39,14 @@ config.files = {
 	],
 	buildJs: [
 		'!' + joinRoot('./gulp/**/*.js'),
-		'!' + joinRoot('./node_modules/**/*.js'),
 		'!' + joinRoot('./node_modules/**/*.*'),
 		joinRoot('./build/**/*.js')
+	],
+	buildElse: [
+		'!' + joinRoot('./gulp/**/*.js'),
+		'!' + joinRoot('./node_modules/**/*.*'),
+		'!' + joinRoot('./build/**/*.js'),
+		joinRoot('./build/**/*.*')
 	]
 };
 

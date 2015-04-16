@@ -11,7 +11,8 @@ module.exports = function(context, name) {
 			function(done) {
 				context.sequence(
 					tasks.clean_release,
-					tasks.release_js
+					tasks.release_js,
+					tasks.release_else
 				)(done);
 			}
 		);
