@@ -1,21 +1,33 @@
 'use strict';
 
 
-var path = require('path');
-
 var koa = require('koa');
-var staticServer = require('koa-static');
 
-var app = koa();
+var staticResource = require('./handlers/common/staticResource.js');
 
-var clientDir = path.join(__dirname, './../client');
-var publicFiles = staticServer(clientDir);
-publicFiles._name = 'static/client';
 
-app.use(publicFiles);
+module.exports = function(context) {
+	var app =
+		context.app = createApp(context);
 
-app.use(function*() {
-	this.body = 'hi!';
-})
+	addHandlers(context);
 
-app.listen(3000);
+	runApp(context);
+};
+
+
+function createApp(context) {
+	return koa();
+}
+
+function addHandlers(context) {
+	staticResource(context);
+
+	context.app.use(function*() {
+		this.body = 'hi!';
+	})
+}
+
+function runApp(context) {
+	context.app.listen(context.config.webPort);
+}

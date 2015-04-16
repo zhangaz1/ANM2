@@ -14,22 +14,33 @@ config.files = {
 		joinRoot('./src/**/*.js')
 	],
 	boot: [
-		joinRoot('./run.cmd'),
-		joinRoot('./index.js')
+		'!' + joinRoot('./build/**/*.*'),
+		'!' + joinRoot('./release/**/*.*'),
+		'!' + joinRoot('./node_modules/**/*.*'),
+		joinRoot('./**/src/boot/currentAppSys.js'),
+		joinRoot('./**/src/boot/config.js'),
+		joinRoot('./**/src/boot/context.js'),
+		joinRoot('./**/src/boot/index.js'),
+		joinRoot('./**/src/index.js'),
+		joinRoot('./index.js'),
+		joinRoot('./run.cmd')
 	],
 	server: [
 		'!' + joinRoot('./build/**/*.*'),
 		'!' + joinRoot('./release/**/*.*'),
+		'!' + joinRoot('./node_modules/**/*.*'),
 		joinRoot('./**/src/server/**/*.*')
 	],
 	client: [
 		'!' + joinRoot('./build/**/*.*'),
 		'!' + joinRoot('./release/**/*.*'),
+		'!' + joinRoot('./node_modules/**/*.*'),
 		joinRoot('./**/src/client/**/*.*')
 	],
 	buildJs: [
 		'!' + joinRoot('./gulp/**/*.js'),
 		'!' + joinRoot('./node_modules/**/*.js'),
+		'!' + joinRoot('./node_modules/**/*.*'),
 		joinRoot('./build/**/*.js')
 	]
 };

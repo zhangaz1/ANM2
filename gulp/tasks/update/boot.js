@@ -7,12 +7,12 @@ module.exports = function(context, name) {
 	context.gulp
 		.task(
 			name,
-			'watch all task',
+			'update boot task',
 			function(done) {
 				context.sequence(
-					tasks.watch_boot,
-					tasks.watch_server,
-					tasks.watch_client
+					tasks.build_boot,
+					tasks.runServer_web,
+					tasks.dev_reload
 				)(done);
 			}
 		);
