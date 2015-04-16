@@ -14,8 +14,12 @@ config.files = {
 		joinRoot('./src/**/*.js')
 	],
 	boot: [
-		joinRoot('./config.js'),
-		joinRoot('./context.js'),
+		'!' + joinRoot('./node_modules/**/*.*'),
+		joinRoot('./**/src/boot/currentAppSys.js'),
+		joinRoot('./**/src/boot/config.js'),
+		joinRoot('./**/src/boot/context.js'),
+		joinRoot('./**/src/boot/index.js'),
+		joinRoot('./**/src/index.js'),
 		joinRoot('./index.js'),
 		joinRoot('./run.cmd')
 	],
